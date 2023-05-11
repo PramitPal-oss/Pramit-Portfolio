@@ -1,6 +1,6 @@
 # My Portfolio
 
-Welcome to my portfolio! I am **Pramit Pal**. I am a **Web Devoloper**. This is a collection of my work and projects that showcase my skills and interests.
+Welcome to my portfolio! I am **Pramit Pal**. I am a **Web Developer**. This is a collection of my work and projects that showcase my skills and interests.
 
 [Demo](https://pramit-portfolio.web.app/)
 
