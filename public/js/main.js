@@ -91,3 +91,56 @@ toggle.addEventListener('click', function (e) {
     moon.classList.add('active-mode');
   }
 });
+
+/*===== SUBMIT FORM DATA TO DATABASE =====*/
+
+const submit = document.querySelector('.submit');
+const userName = document.getElementById('name');
+const message = document.getElementById('message');
+const email = document.getElementById('email');
+const err = document.querySelector('.err');
+const contact = document.querySelector('.contact-right');
+const valid = document.querySelector('.valid');
+
+function validateEmail() {
+  if (!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+    err.innerHTML = 'Please enter a valid email';
+    email.style.borderBottomColor = 'red';
+    err.style.top = '120%';
+    return false;
+  }
+  err.innerHTML = '';
+  email.style.borderBottomColor = 'green';
+  err.style.top = '100%';
+  return true;
+}
+
+submit.addEventListener('click', async function (e) {
+  e.preventDefault();
+  console.log(userName.value, message.value, email.value);
+  if (userName.value.length === 0) return alert('Please enter Your name');
+  if (message.value.length === 0) return alert('Please enter Your message');
+
+  if (!validateEmail()) return alert('Please enter a valid email');
+
+  const res = await fetch(
+    `https://pramit-portfolio-default-rtdb.firebaseio.com/${userName.value}.json`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userName: userName.value,
+        message: message.value,
+        email: email.value,
+      }),
+    }
+  );
+  valid.innerHTML = `✅ Hey ${userName.value} thanks for connecting with me 😀. I will get back to you shortly.`;
+  contact.style.display = 'none';
+  valid.style.display = 'block';
+  userName.value = '';
+  email.value = '';
+  message.value = '';
+});
