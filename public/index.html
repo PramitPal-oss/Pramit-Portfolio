@@ -299,33 +299,6 @@
               </div>
             </div>
           </div>
-          <!--<div class="work__container--card">
-            <div class="work__image">
-              <img src="./assets/img/NetflixLanding.PNG" alt="movie image" />
-            </div>
-            <div class="work__info">
-              <h3 class="work__heading">Netflix Landing Page</h3>
-              <ul class="work__description">
-                <li>
-                  <i class="bx bxl-html5 tech__icon"></i>
-                  <i class="bx bxl-css3 tech__icon"></i>
-                  <i class="bx bxl-javascript tech__icon"></i>
-                </li>
-                <li>
-                  Designed and developed a simple clean netflix landing Page
-                  using HTML,CSS and JavaScript. This landing page is fully
-                  responsive. And It was my first Work after learning HTML CSS
-                  JavaScript.
-                </li>
-              </ul>
-              <div class="work__description--links">
-                <a href=""><i class="bx bxl-github work-icon"></i></a>
-                <a href="https://netflix-landing-page-8ca27.web.app/"
-                  ><i class="bx bx-link work-icon"></i
-                ></a>
-              </div>
-            </div>
-          </div>-->
         </div>
       </section>
 
@@ -344,26 +317,39 @@
               <i class="bx bx-phone skills__icon"></i>
               <a class="footer-link" href="tel:8336807837"> 8336807837</a>
             </div>
-            <a href="./pramit.pdf" class="btn btn2">Download CV</a>
+            <a href="./pramit_pal_resume.pdf" class="btn">Download CV</a>
           </div>
           <div class="contact-right">
-            <form action="">
-              <input type="text" name="name" placeholder="Your Name" required />
+            <form action="POST">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                id="name"
+                required
+              />
               <input
                 type="email"
                 name="email"
-                placeholder="Your email"
+                placeholder="Your Email"
+                id="email"
+                onkeyup="validateEmail()"
                 required
               />
+              <div class="err"></div>
               <textarea
                 name="message"
-                placeholder="Your message"
+                placeholder="Your Message"
                 rows="6"
+                id="message"
                 aria-expanded="false"
               ></textarea>
-              <button type="submit" class="btn btn2">Submit</button>
+              <button type="submit" class="btn2 submit">Submit</button>
             </form>
           </div>
+        </div>
+        <div class="valid">
+          <p>✅ Your application has been submited</p>
         </div>
       </section>
     </main>

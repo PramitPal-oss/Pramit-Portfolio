@@ -532,6 +532,11 @@ img {
   padding-right: 3rem;
 }
 
+.err {
+  color: #ff004f;
+  transition: all 0.3s;
+}
+
 .container {
   padding: 10px 10%;
 }
@@ -593,10 +598,18 @@ img {
   transform: translateY(-5px);
 }
 
-.btn.btn2 {
-  display: inline-block;
+.btn2 {
+  display: block;
+  margin: 50px auto;
+  border: 1px solid var(--first-color);
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--second-color);
+  transition: all 0.5s;
   background: var(--first-color);
   color: #fff;
+  text-align: center;
 }
 
 .contact-right form {
@@ -632,7 +645,7 @@ form .btn2 {
 }
 
 .btn {
-  display: block;
+  display: inline-block;
   margin: 50px auto;
   width: fit-content;
   border: 1px solid var(--first-color);
@@ -641,6 +654,7 @@ form .btn2 {
   text-decoration: none;
   color: var(--second-color);
   transition: all 0.5s;
+  background: var(--first-color);
 }
 
 .btn:hover {
@@ -673,6 +687,12 @@ form .btn2 {
 
 .footer__copy {
   font-size: var(--smaller-font-size);
+}
+
+.valid {
+  text-align: center;
+  display: none;
+  transition: all 0.5s;
 }
 
 /* ===== MEDIA QUERIES=====*/
